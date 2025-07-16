@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import '../ProductPage.css';
+import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
 
 const sections = [
   {
@@ -68,6 +69,7 @@ const sections = [
 ];
 
 const ProductPage = ({ onLogout }) => {
+  useGoogleAnalytics();
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

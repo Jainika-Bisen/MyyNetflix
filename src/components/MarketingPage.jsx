@@ -1,10 +1,18 @@
 import React, { useEffect, useRef } from "react";
 import '../App.css'; // Ensure this path is correct for your project structure
+import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
 
 export default function MovieStreamPage() {
+  useGoogleAnalytics();
   const handleGetStartedClick = () => {
-    // In a real application, you would use React Router or similar for navigation
-    window.location.href = "/login";
+    if (window.gtag) {
+    window.gtag("event", "click", {
+      event_category: "engagement",
+      event_label: "Get Started Button",
+      value: 1,
+    });
+  }
+  window.location.href = "/login";
   };
 
   const trendingMovies = [
