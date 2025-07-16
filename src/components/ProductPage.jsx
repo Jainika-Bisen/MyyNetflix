@@ -69,7 +69,7 @@ const sections = [
 ];
 
 const ProductPage = ({ onLogout }) => {
-  useGoogleAnalytics();
+  // useGoogleAnalytics();
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
