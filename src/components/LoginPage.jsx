@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import '../LoginPage.css';
 import { useNavigate } from 'react-router-dom';
-import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
+// import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
 
 const LoginPage = ({ onLogin }) => {
-  useGoogleAnalytics();
+  // useGoogleAnalytics();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();

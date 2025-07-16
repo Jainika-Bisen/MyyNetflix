@@ -3,8 +3,11 @@ import { Routes, Route, Navigate} from 'react-router-dom';
 import MarketingPage from './components/MarketingPage';
 import LoginPage from './components/LoginPage';
 import ProductPage from './components/ProductPage';
+// import useGoogleAnalytics from "./hooks/useGoogleAnalytics";
+
 
 const App = () => {
+    // useGoogleAnalytics();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   return (

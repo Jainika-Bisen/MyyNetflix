@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import '../ProductPage.css';
-import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
+// import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
 
 const sections = [
   {
