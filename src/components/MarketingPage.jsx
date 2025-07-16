@@ -397,7 +397,7 @@ import mixpanel from 'mixpanel-browser'; // ✅ Import Mixpanel
 import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
 import '../App.css';
 
-// mixpanel.init('43f9c0eccb3559f9470220274efd875f'); // ✅ Replace with your actual token
+mixpanel.init('43f9c0eccb3559f9470220274efd875f'); // ✅ Replace with your actual token
 
 export default function MovieStreamPage() {
   useGoogleAnalytics();
