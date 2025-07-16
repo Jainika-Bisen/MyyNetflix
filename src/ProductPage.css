@@ -1,0 +1,104 @@
+/* ProductPage.css */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #141414;
+  color: white;
+}
+
+.product-container {
+  scroll-behavior: smooth;
+}
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  background: #000;
+  padding: 10px 20px;
+  z-index: 999;
+  display: flex;
+  gap: 20px;
+  border-bottom: 1px solid #222;
+}
+
+.sticky-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.sticky-nav a:hover {
+  color: #e50914;
+}
+
+.movie-section {
+  padding: 60px 30px;
+  min-height: 80vh;
+  border-bottom: 1px solid #333;
+}
+
+.movie-section h2 {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
+
+.movie-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.movie-card {
+  background-color: #222;
+  padding: 10px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+}
+
+.movie-card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.movie-card h3 {
+  font-size: 18px;
+  margin: 10px 0 5px;
+}
+
+.movie-card p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+.logout-container {
+  text-align: center;
+  padding: 50px;
+}
+
+.logout-container button {
+  background-color: #e50914;
+  color: white;
+  padding: 12px 24px;
+  font-size: 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-container button:hover {
+  background-color: #f40612;
+}
