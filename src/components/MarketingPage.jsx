@@ -415,10 +415,10 @@ export default function MovieStreamPage() {
   };
 
   const trendingMovies = [
-    { title: "The Cosmic Journeys", img: "..." },
-    { title: "Mystery of the Old House", img: "..." },
-    { title: "City of Shadows", img: "..." },
-    { title: "Whispers in the Wind", img: "..." },
+    { title: "The Cosmic Journeys", img: "https://m.media-amazon.com/images/M/MV5BNjA5NDk0Nzk1OF5BMl5BanBnXkFtZTgwMjk1NjE0MzE@._V1_FMjpg_UX1000_.jpg" },
+    { title: "Mystery of the Old House", img: "https://picsum.photos/id/1040/300/440" },
+    { title: "City of Shadows", img: "https://picsum.photos/id/1042/300/440" },
+    { title: "Whispers in the Wind", img: "https://picsum.photos/id/1047/300/440" },
   ];
 
   const heroRef = useRef(null);
