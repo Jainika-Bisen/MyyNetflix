@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
 import mixpanel from 'mixpanel-browser';
 
+mixpanel.init('43f9c0eccb3559f9470220274efd875f');
+
   // ✅ Track when user visits the Login Page
   useEffect(() => {
     mixpanel.track('Page View: Login');
