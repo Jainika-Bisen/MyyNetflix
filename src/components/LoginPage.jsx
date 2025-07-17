@@ -6,13 +6,12 @@ import mixpanel from 'mixpanel-browser';
 
 mixpanel.init('43f9c0eccb3559f9470220274efd875f');
 
-  // ✅ Track when user visits the Login Page
+const LoginPage = ({ onLogin }) => {
+  useGoogleAnalytics();
+   // ✅ Track when user visits the Login Page
   useEffect(() => {
     mixpanel.track('Page View: Login');
   }, []);
-
-const LoginPage = ({ onLogin }) => {
-  useGoogleAnalytics();
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
