@@ -551,7 +551,14 @@ export default function MovieStreamPage() {
               <li>HD available</li>
               <li>Stream on 2 devices at once</li>
             </ul>
-            <button>Choose Plan</button>
+            <button onClick={() => {
+                mixpanel.track('Click: Choose Plan', {
+                plan_type: 'Standard',
+                price: '12.99',
+              });
+            }}>
+              Choose Plan
+            </button>
           </div>
           <div className="pricing-card premium">
             <h3>Premium</h3>
@@ -561,7 +568,15 @@ export default function MovieStreamPage() {
               <li>Stream on 4 devices at once</li>
               <li>Download content</li>
             </ul>
-            <button>Choose Plan</button>
+            <button onClick={() => {
+              mixpanel.track('Click: Choose Plan', {
+                plan_type: 'Premium',
+                price: '19.99',
+              });
+            }}>
+              Choose Plan
+            </button>
+
           </div>
         </div>
       </section>
