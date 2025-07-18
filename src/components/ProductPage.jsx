@@ -123,13 +123,21 @@
 
 // export default ProductPage;
 
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../ProductPage.css';
 import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
 import mixpanel from 'mixpanel-browser';
 
 // Initialize Mixpanel once (ensure project token is set elsewhere)
 mixpanel.init('43f9c0eccb3559f9470220274efd875f'); // Replace with actual token
+
+
+const allMovies = [
+  { title: 'Inception', genre: 'Sci-Fi', description: 'A mind-bending thriller.', image: 'https://picsum.photos/id/1003/200/300' },
+  { title: 'Titanic', genre: 'Drama', description: 'An epic love story.', image: 'https://picsum.photos/id/1020/200/300' },
+  { title: 'The Matrix', genre: 'Sci-Fi', description: 'Reality is a simulation.', image: 'https://picsum.photos/id/1033/200/300' },
+  { title: 'The Godfather', genre: 'Crime', description: 'The rise of a mafia family.', image: 'https://picsum.photos/id/1011/200/300' },
+];
 
 const sections = [
   {
@@ -200,9 +208,35 @@ const sections = [
 const ProductPage = ({ onLogout }) => {
   useGoogleAnalytics();
 
+  const [searchQuery, setSearchQuery] = useState('');
+  const [filteredMovies, setFilteredMovies] = useState([]);
+
   const handleLogout = () => {
     mixpanel.track('Click: Logout');
     onLogout(); // call the actual logout function
+  };
+
+  const handleProfileClick = () => {
+    mixpanel.track('Click: Profile Icon');
+    alert("Profile clicked (demo)");
+  };
+
+  const handleSearch = (e) => {
+    const query = e.target.value.toLowerCase();
+    setSearchQuery(query);
+
+    const allSectionMovies = sections.flatMap(sec => sec.movies);
+    const matches = allSectionMovies.filter(movie =>
+      movie.title.toLowerCase().includes(query) ||
+      movie.description.toLowerCase().includes(query)
+    );
+
+    setFilteredMovies(matches);
+
+    mixpanel.track('Search Performed', {
+      query,
+      results: matches.length,
+    });
   };
 
   useEffect(() => {
@@ -233,6 +267,22 @@ const ProductPage = ({ onLogout }) => {
 
   return (
     <div className="product-container">
+      <div className="top-bar">
+        <input
+          type="text"
+          placeholder="Search for movies..."
+          value={searchQuery}
+          onChange={handleSearch}
+          className="search-bar"
+        />
+        <div className="profile-icon" onClick={handleProfileClick}>
+          <img
+            src="https://cdn-icons-png.flaticon.com/512/1144/1144760.png"
+            alt="Profile"
+            style={{ width: 32, height: 32, cursor: 'pointer' }}
+          />
+        </div>
+      </div>
       <div className="sticky-nav">
         {sections.map(sec => (
           <a
@@ -250,11 +300,12 @@ const ProductPage = ({ onLogout }) => {
         ))}
       </div>
 
-      {sections.map(section => (
-        <div key={section.id} id={section.id} className="movie-section">
-          <h2>{section.title}</h2>
+      {/* Render filtered movies or sections */}
+      {searchQuery ? (
+        <div className="movie-section" id="search-results">
+          <h2>🔍 Search Results</h2>
           <div className="movie-list">
-            {section.movies.map((movie, index) => (
+            {filteredMovies.map((movie, index) => (
               <div className="movie-card" key={index}>
                 <img src={movie.image} alt={movie.title} />
                 <h3>{movie.title}</h3>
@@ -263,7 +314,22 @@ const ProductPage = ({ onLogout }) => {
             ))}
           </div>
         </div>
-      ))}
+      ) : (
+        sections.map(section => (
+          <div key={section.id} id={section.id} className="movie-section">
+            <h2>{section.title}</h2>
+            <div className="movie-list">
+              {section.movies.map((movie, index) => (
+                <div className="movie-card" key={index}>
+                  <img src={movie.image} alt={movie.title} />
+                  <h3>{movie.title}</h3>
+                  <p>{movie.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))
+      )}
 
       <div className="logout-container">
         <button onClick={handleLogout}>Logout</button>
