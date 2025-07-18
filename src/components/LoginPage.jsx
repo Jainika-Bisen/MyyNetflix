@@ -19,6 +19,7 @@ const LoginPage = ({ onLogin }) => {
   const handleLogin = () => {
     if (username && password) {
       // ✅ Track login success
+      console.log('Hi')
       mixpanel.track('Login Success', {
         username: username, // Optional — only if it's not sensitive
       });
