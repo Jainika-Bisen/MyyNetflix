@@ -232,7 +232,7 @@ const ProductPage = ({ onLogout }) => {
     );
 
     setFilteredMovies(matches);
-
+    console.log('Hello')
     mixpanel.track('Search Performed', {
       query,
       results: matches.length,
