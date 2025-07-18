@@ -129,7 +129,7 @@ import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
 import mixpanel from 'mixpanel-browser';
 
 // Initialize Mixpanel once (ensure project token is set elsewhere)
-mixpanel.init('YOUR_MIXPANEL_PROJECT_TOKEN'); // Replace with actual token
+mixpanel.init('43f9c0eccb3559f9470220274efd875f'); // Replace with actual token
 
 const sections = [
   {
@@ -235,7 +235,18 @@ const ProductPage = ({ onLogout }) => {
     <div className="product-container">
       <div className="sticky-nav">
         {sections.map(sec => (
-          <a key={sec.id} href={`#${sec.id}`}>{sec.title}</a>
+          <a
+            key={sec.id}
+            href={`#${sec.id}`}
+            onClick={() => {
+                mixpanel.track('Click: Product Section Link', {
+                section_id: sec.id,
+                section_title: sec.title,
+              });
+            }}
+          >
+            {sec.title}
+          </a>
         ))}
       </div>
 

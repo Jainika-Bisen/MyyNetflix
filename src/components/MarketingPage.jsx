@@ -557,7 +557,7 @@ export default function MovieStreamPage() {
                 price: '12.99',
               });
             }}>
-              Choose Plan
+              Choose Standard Plan
             </button>
           </div>
           <div className="pricing-card premium">
@@ -574,7 +574,7 @@ export default function MovieStreamPage() {
                 price: '19.99',
               });
             }}>
-              Choose Plan
+              Choose Premium Plan
             </button>
 
           </div>
