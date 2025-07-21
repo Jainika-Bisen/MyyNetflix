@@ -23,6 +23,7 @@ const LoginPage = ({ onLogin }) => {
       mixpanel.track('Login Success', {
         username: username, // Optional — only if it's not sensitive
       });
+      thriveStack.setUser("{User_Email}");
 
       onLogin();
       navigate('/product');
