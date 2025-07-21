@@ -130,7 +130,20 @@ import mixpanel from 'mixpanel-browser';
 
 // Initialize Mixpanel once (ensure project token is set elsewhere)
 mixpanel.init('43f9c0eccb3559f9470220274efd875f'); // Replace with actual token
-
+window.thriveStack.track([{
+        "event_name": "signed_up",
+        "properties": {
+            "user_email": "john.doe@acme.xyz",
+            "user_name": "John Doe",
+            "utm_campaign": "customer_success",
+            "utm_medium": "referral",
+            "utm_source": "twitter",
+            "utm_term": "free_trial"
+        },
+        "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+        "timestamp": "2025-07-21T07:33:42.220Z"
+}]);
+    
 
 const allMovies = [
   { title: 'Inception', genre: 'Sci-Fi', description: 'A mind-bending thriller.', image: 'https://picsum.photos/id/1003/200/300' },

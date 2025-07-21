@@ -25,10 +25,12 @@ const LoginPage = ({ onLogin }) => {
       });
 
       window.thrivestack && window.thrivestack.identify({
-      email: "user@example.com",
-});
+        email: "user@example.com",
+      });
 
 
+    // thriveStack.setUser("{User_Id}", "{User_Email}");
+/* eg: thriveStack.setUser("18f716ac-37a4-464f-adb7-3cc30032308c","john.doe@acme.xyz");*/
       onLogin();
       navigate('/product');
     } else {
