@@ -413,6 +413,18 @@ export default function MovieStreamPage() {
 
     window.location.href = "/login";
   };
+  window.thriveStack.track([{
+    "event_name": "feature_used",
+    "properties": {
+        "feature_name": "export_report",
+        "user_role": "admin"
+    },
+    "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+    "timestamp": "2025-07-21T07:42:12.293Z",
+    "context": {
+        "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"
+    }
+}]);
 
   const trendingMovies = [
     { title: "The Cosmic Journeys", img: "https://m.media-amazon.com/images/M/MV5BNjA5NDk0Nzk1OF5BMl5BanBnXkFtZTgwMjk1NjE0MzE@._V1_FMjpg_UX1000_.jpg" },
