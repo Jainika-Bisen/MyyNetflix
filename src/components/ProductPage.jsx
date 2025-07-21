@@ -334,6 +334,22 @@ const ProductPage = ({ onLogout }) => {
                 section_id: sec.id,
                 section_title: sec.title,
               });
+
+              // ✅ ThriveStack tracking
+              if (window.thriveStack && typeof window.thriveStack.track === 'function') {
+                window.thriveStack.track([{
+                  event_name: "feature_used",
+                  properties: {
+                    feature_name: `click_${sec.id}_section`, // e.g., click_featured_section
+                    user_role: "admin", // Replace with dynamic role if needed
+                  },
+                  user_id: "18f716ac-37a4-464f-adb7-3cc30032308c", // Replace with actual user ID
+                  timestamp: new Date().toISOString(),
+                  context: {
+                    group_id: "ac8db7ba-5139-4911-ba6e-523fd9c4704b" // Optional group/org ID
+                  }
+                }]);
+              }
             }}
           >
             {sec.title}

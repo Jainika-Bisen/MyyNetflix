@@ -27,10 +27,8 @@ const LoginPage = ({ onLogin }) => {
       window.thrivestack && window.thrivestack.identify({
         email: "user@example.com",
       });
+      // thriveStack.setUser("{User_Id}", "{User_Email}");
 
-
-    // thriveStack.setUser("{User_Id}", "{User_Email}");
-/* eg: thriveStack.setUser("18f716ac-37a4-464f-adb7-3cc30032308c","john.doe@acme.xyz");*/
       onLogin();
       navigate('/product');
     } else {
@@ -47,6 +45,7 @@ const LoginPage = ({ onLogin }) => {
     <div className="container">
       <h1>Login</h1>
       <input type="text" placeholder="Username" onChange={e => setUsername(e.target.value)} />
+      <input type="text" placeholder="Email" onChange={e => setUsername(e.target.value)} />
       <input type="password" placeholder="Password" onChange={e => setPassword(e.target.value)} />
       <button onClick={handleLogin}>Login</button>
     </div>
