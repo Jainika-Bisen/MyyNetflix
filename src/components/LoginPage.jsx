@@ -24,10 +24,10 @@ const LoginPage = ({ onLogin }) => {
         username: username, // Optional — only if it's not sensitive
       });
 
-      window.thrivestack && window.thrivestack.identify({
+      window.thriveStack && window.thriveStack.identify({
         username: username,
       });
-      window.thriveStack.setUser("123", "{User_Email}");
+      window.thriveStack.setUser("{User_Id}", "{User_Email}");
 
       onLogin();
       navigate('/product');
