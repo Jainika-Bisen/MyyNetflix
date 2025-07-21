@@ -27,7 +27,7 @@ const LoginPage = ({ onLogin }) => {
       window.thrivestack && window.thrivestack.identify({
         email: "user@example.com",
       });
-      // thriveStack.setUser("{User_Id}", "{User_Email}");
+      window.thriveStack.setUser("{User_Id}", "{User_Email}");
 
       onLogin();
       navigate('/product');
