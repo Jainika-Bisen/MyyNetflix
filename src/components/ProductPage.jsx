@@ -156,6 +156,19 @@ window.thriveStack.track([{
         "context": {
             "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"  // Ensure this matches the account_id used in the event_name
         }
+}]);
+
+window.thriveStack.track([{
+        "event_name": "account_added_user",
+        "properties": {
+            "account_name": "Acme",
+            "user_email": "john.doe@acme.xyz"
+        },
+        "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+        "timestamp": "2025-07-21T07:38:16.804Z",
+        "context": {
+            "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"
+        }
     }]);
     
     
