@@ -143,6 +143,21 @@ window.thriveStack.track([{
         "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
         "timestamp": "2025-07-21T07:33:42.220Z"
 }]);
+
+window.thriveStack.track([{
+        "event_name": "account_created",
+        "properties": {
+            "account_domain": "acme.xyz",
+            "account_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b",
+            "account_name": "Acme"
+        },
+        "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+        "timestamp": "2025-07-21T07:36:33.813Z",
+        "context": {
+            "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"  // Ensure this matches the account_id used in the event_name
+        }
+    }]);
+    
     
 
 const allMovies = [
