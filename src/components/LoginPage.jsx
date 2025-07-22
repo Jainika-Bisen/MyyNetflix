@@ -49,6 +49,18 @@ const LoginPage = ({ onLogin }) => {
         timestamp: new Date().toISOString(),
         context: { group_id: "ac8db7ba-5139-4911-ba6e-523fd9c4704b" }
       }]);
+      window.thriveStack.track([{
+      "event_name": "Login Success",
+      "properties": {
+          "completion_status": "completed",
+          "user_role": "admin"
+      },
+      "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+      "timestamp": "2025-07-22T05:54:17.093Z",
+      "context": {
+          "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"
+      }
+    }]);
       navigate('/product');
     } else {
       alert('Please enter username and password.');
