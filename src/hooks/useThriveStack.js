@@ -6,7 +6,7 @@ export default function useThriveStack() {
     const script = document.createElement("script");
     script.src = "https://cdn.thrivestack.ai/ts.js";
     script.async = true;
-    script.setAttribute("data-ts-api-key", "bRroMZSqg+1sv4n3xsQkjjSiA68VrQIP1VSD6aSzIuk=");
+    script.setAttribute("data-ts-api-key", "7QHibRGzoc3eCYkV06VWAep/4ykmRh4nQE/gY8mN2g8=");
     document.head.appendChild(script);
 
     return () => {
