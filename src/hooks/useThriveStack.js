@@ -3,11 +3,11 @@ import { useEffect } from "react";
 
 export default function useThriveStack() {
   useEffect(() => {
-    const script = document.createElement("script");
-    script.src = "https://cdn.thrivestack.ai/ts.js";
-    script.async = true;
-    script.setAttribute("data-ts-api-key", "7QHibRGzoc3eCYkV06VWAep/4ykmRh4nQE/gY8mN2g8=");
-    document.head.appendChild(script);
+    // const script = document.createElement("script");
+    // script.src = "https://cdn.thrivestack.ai/ts.js";
+    // script.async = true;
+    // script.setAttribute("data-ts-api-key", "7QHibRGzoc3eCYkV06VWAep/4ykmRh4nQE/gY8mN2g8=");
+    // document.head.appendChild(script);
 
     return () => {
       document.head.removeChild(script);

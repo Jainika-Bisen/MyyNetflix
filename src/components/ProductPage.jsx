@@ -130,46 +130,46 @@ import mixpanel from 'mixpanel-browser';
 
 // Initialize Mixpanel once (ensure project token is set elsewhere)
 mixpanel.init('43f9c0eccb3559f9470220274efd875f'); // Replace with actual token
-window.thriveStack.track([{
-        "event_name": "signed_up",
-        "properties": {
-            "user_email": "john.doe@acme.xyz",
-            "user_name": "John Doe",
-            "utm_campaign": "customer_success",
-            "utm_medium": "referral",
-            "utm_source": "twitter",
-            "utm_term": "free_trial"
-        },
-        "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
-        "timestamp": "2025-07-21T07:33:42.220Z"
-}]);
+// window.thriveStack.track([{
+//         "event_name": "signed_up",
+//         "properties": {
+//             "user_email": "john.doe@acme.xyz",
+//             "user_name": "John Doe",
+//             "utm_campaign": "customer_success",
+//             "utm_medium": "referral",
+//             "utm_source": "twitter",
+//             "utm_term": "free_trial"
+//         },
+//         "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+//         "timestamp": "2025-07-21T07:33:42.220Z"
+// }]);
 
-window.thriveStack.track([{
-        "event_name": "account_created",
-        "properties": {
-            "account_domain": "acme.xyz",
-            "account_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b",
-            "account_name": "Acme"
-        },
-        "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
-        "timestamp": "2025-07-21T07:36:33.813Z",
-        "context": {
-            "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"  // Ensure this matches the account_id used in the event_name
-        }
-}]);
+// window.thriveStack.track([{
+//         "event_name": "account_created",
+//         "properties": {
+//             "account_domain": "acme.xyz",
+//             "account_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b",
+//             "account_name": "Acme"
+//         },
+//         "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+//         "timestamp": "2025-07-21T07:36:33.813Z",
+//         "context": {
+//             "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"  // Ensure this matches the account_id used in the event_name
+//         }
+// }]);
 
-window.thriveStack.track([{
-        "event_name": "account_added_user",
-        "properties": {
-            "account_name": "Acme",
-            "user_email": "john.doe@acme.xyz"
-        },
-        "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
-        "timestamp": "2025-07-21T07:38:16.804Z",
-        "context": {
-            "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"
-        }
-    }]);
+// window.thriveStack.track([{
+//         "event_name": "account_added_user",
+//         "properties": {
+//             "account_name": "Acme",
+//             "user_email": "john.doe@acme.xyz"
+//         },
+//         "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+//         "timestamp": "2025-07-21T07:38:16.804Z",
+//         "context": {
+//             "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"
+//         }
+//     }]);
     
     
 
@@ -336,20 +336,20 @@ const ProductPage = ({ onLogout }) => {
               });
 
               // ✅ ThriveStack tracking
-              if (window.thriveStack && typeof window.thriveStack.track === 'function') {
-                window.thriveStack.track([{
-                  event_name: "feature_used",
-                  properties: {
-                    feature_name: `click_${sec.id}_section`, // e.g., click_featured_section
-                    user_role: "admin", // Replace with dynamic role if needed
-                  },
-                  user_id: "18f716ac-37a4-464f-adb7-3cc30032308c", // Replace with actual user ID
-                  timestamp: new Date().toISOString(),
-                  context: {
-                    group_id: "ac8db7ba-5139-4911-ba6e-523fd9c4704b" // Optional group/org ID
-                  }
-                }]);
-              }
+              // if (window.thriveStack && typeof window.thriveStack.track === 'function') {
+              //   window.thriveStack.track([{
+              //     event_name: "feature_used",
+              //     properties: {
+              //       feature_name: `click_${sec.id}_section`, // e.g., click_featured_section
+              //       user_role: "admin", // Replace with dynamic role if needed
+              //     },
+              //     user_id: "18f716ac-37a4-464f-adb7-3cc30032308c", // Replace with actual user ID
+              //     timestamp: new Date().toISOString(),
+              //     context: {
+              //       group_id: "ac8db7ba-5139-4911-ba6e-523fd9c4704b" // Optional group/org ID
+              //     }
+              //   }]);
+              // }
             }}
           >
             {sec.title}

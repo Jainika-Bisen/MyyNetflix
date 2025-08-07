@@ -393,14 +393,14 @@ import React, { useEffect, useRef } from "react";
 import * as amplitude from '@amplitude/analytics-browser';
 import mixpanel from 'mixpanel-browser'; // ✅ Import Mixpanel
 import useGoogleAnalytics from "../hooks/useGoogleAnalytics";
-import useThriveStackUser from "../hooks/useThriveStack";
+// import useThriveStackUser from "../hooks/useThriveStack";
 import '../App.css';
 
 mixpanel.init('43f9c0eccb3559f9470220274efd875f'); // ✅ Replace with your actual token
 
 export default function MovieStreamPage() {
   useGoogleAnalytics();
-  useThriveStackUser();
+  // useThriveStackUser();
 
   const handleGetStartedClick = () => {
     // ✅ Amplitude tracking
@@ -415,18 +415,18 @@ export default function MovieStreamPage() {
 
     window.location.href = "/login";
   };
-  window.thriveStack.track([{
-    "event_name": "Get Started Button",
-    "properties": {
-        "feature_name": "export_report",
-        "user_role": "admin"
-    },
-    "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
-    "timestamp": "2025-07-21T07:42:12.293Z",
-    "context": {
-        "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"
-    }
-}]);
+//   window.thriveStack.track([{
+//     "event_name": "Get Started Button",
+//     "properties": {
+//         "feature_name": "export_report",
+//         "user_role": "admin"
+//     },
+//     "user_id": "18f716ac-37a4-464f-adb7-3cc30032308c",
+//     "timestamp": "2025-07-21T07:42:12.293Z",
+//     "context": {
+//         "group_id": "ac8db7ba-5139-4911-ba6e-523fd9c4704b"
+//     }
+// }]);
 
   const trendingMovies = [
     { title: "The Cosmic Journeys", img: "https://m.media-amazon.com/images/M/MV5BNjA5NDk0Nzk1OF5BMl5BanBnXkFtZTgwMjk1NjE0MzE@._V1_FMjpg_UX1000_.jpg" },
@@ -474,20 +474,20 @@ export default function MovieStreamPage() {
           });
 
           // ✅ ThriveStack tracking
-      if (window.thriveStack && typeof window.thriveStack.track === 'function') {
-        window.thriveStack.track([{
-          event_name: "feature_used",
-          properties: {
-            feature_name: entry.target.id,
-            user_role: "admin", // Replace with actual role if needed
-          },
-          user_id: "18f716ac-37a4-464f-adb7-3cc30032308c", // Replace with dynamic user
-          timestamp: new Date().toISOString(),
-          context: {
-            group_id: "ac8db7ba-5139-4911-ba6e-523fd9c4704b",
-          }
-        }]);
-      }
+      // if (window.thriveStack && typeof window.thriveStack.track === 'function') {
+      //   window.thriveStack.track([{
+      //     event_name: "feature_used",
+      //     properties: {
+      //       feature_name: entry.target.id,
+      //       user_role: "admin", // Replace with actual role if needed
+      //     },
+      //     user_id: "18f716ac-37a4-464f-adb7-3cc30032308c", // Replace with dynamic user
+      //     timestamp: new Date().toISOString(),
+      //     context: {
+      //       group_id: "ac8db7ba-5139-4911-ba6e-523fd9c4704b",
+      //     }
+      //   }]);
+      // }
 
           window.location.hash = entry.target.id;
         }
