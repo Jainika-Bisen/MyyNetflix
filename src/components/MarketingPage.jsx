@@ -473,21 +473,21 @@ export default function MovieStreamPage() {
 //             section_id: entry.target.id,
 //           });
 
-//           // ✅ ThriveStack tracking
-//       // if (window.thriveStack && typeof window.thriveStack.track === 'function') {
-//       //   window.thriveStack.track([{
-//       //     event_name: "feature_used",
-//       //     properties: {
-//       //       feature_name: entry.target.id,
-//       //       user_role: "admin", // Replace with actual role if needed
-//       //     },
-//       //     user_id: "18f716ac-37a4-464f-adb7-3cc30032308c", // Replace with dynamic user
-//       //     timestamp: new Date().toISOString(),
-//       //     context: {
-//       //       group_id: "ac8db7ba-5139-4911-ba6e-523fd9c4704b",
-//       //     }
-//       //   }]);
-//       // }
+      //     ✅ ThriveStack tracking
+      // if (window.thriveStack && typeof window.thriveStack.track === 'function') {
+      //   window.thriveStack.track([{
+      //     event_name: "feature_used",
+      //     properties: {
+      //       feature_name: entry.target.id,
+      //       user_role: "admin", // Replace with actual role if needed
+      //     },
+      //     user_id: "18f716ac-37a4-464f-adb7-3cc30032308c", // Replace with dynamic user
+      //     timestamp: new Date().toISOString(),
+      //     context: {
+      //       group_id: "ac8db7ba-5139-4911-ba6e-523fd9c4704b",
+      //     }
+      //   }]);
+      // }
 
 //           window.location.hash = entry.target.id;
 //         }
